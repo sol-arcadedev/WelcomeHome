@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome Home 🍟 | The Wagecuck Pepe Memecoin</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            background: #000000;
+            color: #fff;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* Parallax Background with M's and Fries */
+        .parallax-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            pointer-events: none;
+            overflow: hidden;
+        }
+
+        .mcdonalds-m {
+            position: absolute;
+            font-size: 40rem;
+            font-weight: bold;
+            color: rgba(255, 199, 44, 0.05);
+            font-family: Arial, sans-serif;
+            user-select: none;
+            transform-origin: center;
+        }
+
+        .m1 {
+            top: -10%;
+            left: -15%;
+            transform: rotate(-15deg);
+        }
+
+        .m2 {
+            top: 40%;
+            right: -20%;
+            transform: rotate(25deg);
+        }
+
+        .m3 {
+            bottom: -15%;
+            left: 30%;
+            transform: rotate(-10deg);
+        }
+
+        /* Animated Fries */
+        .fries {
+            position: absolute;
+            font-size: 8rem;
+            user-select: none;
+            opacity: 0.15;
+            animation: float 4s ease-in-out infinite;
+        }
+
+        .fries1 {
+            top: 15%;
+            left: 10%;
+            animation-delay: 0s;
+        }
+
+        .fries2 {
+            top: 35%;
+            right: 15%;
+            animation-delay: 1s;
+        }
+
+        .fries3 {
+            top: 55%;
+            left: 20%;
+            animation-delay: 2s;
+        }
+
+        .fries4 {
+            top: 75%;
+            right: 10%;
+            animation-delay: 1.5s;
+        }
+
+        .fries5 {
+            top: 90%;
+            left: 40%;
+            animation-delay: 0.5s;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Section backgrounds - alternating colors */
+        .section-black {
+            background: #000000;
+            padding: 60px 0;
+        }
+
+        .section-red {
+            background: #DA291C;
+            padding: 60px 0;
+            box-shadow: 0 0 50px rgba(218, 41, 28, 0.3);
+        }
+
+        .section-yellow {
+            background: #FFC72C;
+            padding: 60px 0;
+            color: #000;
+            box-shadow: 0 0 50px rgba(255, 199, 44, 0.3);
+        }
+
+        /* Top Links Section */
+        .top-links {
+            background: rgba(218, 41, 28, 0.9);
+            border: 3px solid #FFC72C;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 30px;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            box-shadow: 0 0 30px rgba(255, 199, 44, 0.4);
+        }
+
+        .top-link-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1.1rem;
+            font-weight: bold;
+        }
+
+        .top-link-item a {
+            color: #FFC72C;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            text-shadow: 0 0 10px rgba(255, 199, 44, 0.3);
+        }
+
+        .top-link-item a:hover {
+            color: #fff;
+            text-shadow: 0 0 20px rgba(255, 199, 44, 0.8);
+            transform: scale(1.1);
+        }
+
+        .top-link-item .label {
+            color: #fff;
+        }
+
+        .ca-text {
+            color: #FFC72C;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .ca-text:hover {
+            color: #fff;
+            text-shadow: 0 0 20px rgba(255, 199, 44, 0.8);
+        }
+
+        /* Header */
+        .header {
+            text-align: center;
+            padding: 40px 20px;
+            animation: fadeIn 1s ease-in;
+        }
+
+        .logo-section {
+            background: rgba(255, 199, 44, 0.1);
+            border-radius: 20px;
+            padding: 30px;
+            margin-bottom: 30px;
+            border: 5px solid #FFC72C;
+            box-shadow: 0 0 30px rgba(255, 199, 44, 0.3);
+        }
+
+        .pepe-image {
+            max-width: 400px;
+            width: 100%;
+            border-radius: 15px;
+            border: 5px solid #FFC72C;
+            box-shadow: 0 10px 30px rgba(255, 199, 44, 0.5);
+            animation: float 3s ease-in-out infinite;
+        }
+
+        h1 {
+            font-size: 4rem;
+            text-shadow: 4px 4px 0px #FFC72C, 8px 8px 0px rgba(255, 199, 44, 0.3);
+            margin: 20px 0;
+            animation: pulse 2s ease-in-out infinite;
+            color: #FFC72C;
+        }
+
+        .subtitle {
+            font-size: 1.8rem;
+            text-shadow: 2px 2px 0px #FFC72C;
+            margin-bottom: 10px;
+        }
+
+        .tagline {
+            font-size: 1.3rem;
+            font-style: italic;
+            margin: 10px 0;
+            opacity: 0.95;
+            color: #FFC72C;
+        }
+
+        /* Info Boxes */
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin: 40px 0;
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+            padding: 0 20px;
+        }
+
+        .info-box {
+            background: rgba(20, 20, 20, 0.95);
+            padding: 30px;
+            border-radius: 15px;
+            border: 3px solid #FFC72C;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 0 20px rgba(255, 199, 44, 0.2);
+        }
+
+        .section-red .info-box {
+            background: rgba(0, 0, 0, 0.7);
+            border-color: #FFC72C;
+        }
+
+        .info-box:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(255, 199, 44, 0.5);
+        }
+
+        .section-red .info-box:hover {
+            box-shadow: 0 15px 40px rgba(255, 199, 44, 0.6);
+        }
+
+        .info-box h2 {
+            color: #FFC72C;
+            margin-bottom: 15px;
+            font-size: 2rem;
+            text-shadow: 2px 2px 0px rgba(255, 199, 44, 0.3);
+        }
+
+        .info-box p {
+            line-height: 1.6;
+            font-size: 1.1rem;
+        }
+
+        /* Roadmap - Improved for Yellow Section */
+        .roadmap {
+            margin: 40px auto;
+            max-width: 1200px;
+            padding: 0 20px;
+        }
+
+        .roadmap h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+            color: #000;
+            text-shadow: 3px 3px 0px rgba(218, 41, 28, 0.3);
+            font-weight: bold;
+        }
+
+        .section-yellow .roadmap-item {
+            background: rgba(0, 0, 0, 0.9);
+            padding: 25px;
+            margin: 15px 0;
+            border-left: 5px solid #DA291C;
+            border-radius: 10px;
+            box-shadow: 0 0 25px rgba(0, 0, 0, 0.4);
+            transition: all 0.3s ease;
+            color: #fff;
+        }
+
+        .section-yellow .roadmap-item:hover {
+            box-shadow: 0 0 40px rgba(218, 41, 28, 0.6);
+            transform: translateX(10px);
+            background: rgba(0, 0, 0, 0.95);
+        }
+
+        .section-yellow .roadmap-item h3 {
+            color: #FFC72C;
+            margin-bottom: 10px;
+            font-size: 1.5rem;
+            text-shadow: 2px 2px 0px rgba(218, 41, 28, 0.3);
+        }
+
+        .section-yellow .roadmap-item p {
+            color: #fff;
+            line-height: 1.6;
+        }
+
+        /* CTA Button */
+        .cta-section {
+            text-align: center;
+            margin: 50px 0;
+        }
+
+        .cta-button {
+            background: #DA291C;
+            color: #FFF;
+            padding: 20px 50px;
+            font-size: 1.8rem;
+            border: 4px solid #000;
+            border-radius: 50px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 30px rgba(0, 0, 0, 0.5);
+        }
+
+        .cta-button:hover {
+            background: #000;
+            color: #FFC72C;
+            border-color: #DA291C;
+            transform: scale(1.1);
+            box-shadow: 0 10px 50px rgba(0, 0, 0, 0.7);
+        }
+
+        .section-yellow .cta-text {
+            margin-top: 20px;
+            font-size: 1.1rem;
+            color: #000;
+            font-weight: bold;
+            text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.5);
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: 30px;
+            background: rgba(20, 20, 20, 0.95);
+            margin-top: 50px;
+            border-radius: 15px;
+            border: 3px solid #FFC72C;
+            box-shadow: 0 0 30px rgba(255, 199, 44, 0.2);
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+            margin-bottom: 20px;
+        }
+
+        .social-links {
+            margin: 20px 0;
+        }
+
+        .social-links a {
+            color: #FFC72C;
+            text-decoration: none;
+            font-size: 1.5rem;
+            transition: all 0.3s ease;
+            text-shadow: 0 0 10px rgba(255, 199, 44, 0.3);
+            display: inline-block;
+        }
+
+        .social-links a:hover {
+            color: #fff;
+            text-shadow: 0 0 20px rgba(255, 199, 44, 0.8);
+            transform: scale(1.2);
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-30px) rotate(5deg); }
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            h1 { font-size: 2.5rem; }
+            .subtitle { font-size: 1.3rem; }
+            .tagline { font-size: 1rem; }
+            .pepe-image { max-width: 300px; }
+            .mcdonalds-m { font-size: 20rem; }
+            .fries { font-size: 4rem; }
+            .top-links {
+                flex-direction: column;
+                gap: 15px;
+            }
+            .top-link-item {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+
+        /* Scrolling text */
+        .ticker {
+            background: rgba(255, 199, 44, 0.1);
+            padding: 15px 0;
+            overflow: hidden;
+            white-space: nowrap;
+            border-top: 3px solid #FFC72C;
+            border-bottom: 3px solid #FFC72C;
+            margin: 30px 0;
+            box-shadow: 0 0 20px rgba(255, 199, 44, 0.2);
+        }
+
+        .ticker-content {
+            display: inline-block;
+            animation: scroll 20s linear infinite;
+        }
+
+        @keyframes scroll {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+
+        .ticker-content span {
+            font-size: 1.5rem;
+            margin: 0 50px;
+            font-weight: bold;
+            color: #FFC72C;
+            text-shadow: 0 0 10px rgba(255, 199, 44, 0.3);
+        }
+
+        /* Yellow glow accents */
+        .glow {
+            animation: glow 2s ease-in-out infinite alternate;
+        }
+
+        @keyframes glow {
+            from {
+                text-shadow: 0 0 5px #FFC72C, 0 0 10px #FFC72C, 0 0 15px #FFC72C;
+            }
+            to {
+                text-shadow: 0 0 10px #FFC72C, 0 0 20px #FFC72C, 0 0 30px #FFC72C;
+            }
+        }
+    </style>
+</head>
+<body>
+<!-- Parallax Background with M's and Fries -->
+<div class="parallax-bg" id="parallaxBg">
+    <div class="mcdonalds-m m1">M</div>
+    <div class="mcdonalds-m m2">M</div>
+    <div class="mcdonalds-m m3">M</div>
+
+    <!-- Animated Fries -->
+    <div class="fries fries1">🍟</div>
+    <div class="fries fries2">🍟</div>
+    <div class="fries fries3">🍟</div>
+    <div class="fries fries4">🍟</div>
+    <div class="fries fries5">🍟</div>
+</div>
+
+<!-- BLACK SECTION -->
+<div class="section-black">
+    <div class="container">
+        <!-- Top Links Section -->
+        <div class="top-links">
+            <div class="top-link-item">
+                <span class="label">CA:</span>
+                <span class="ca-text">To be added</span>
+            </div>
+            <div class="top-link-item">
+                <span class="label">🐦</span>
+                <a href="#" onclick="alert('Add your Twitter/X link here!'); return false;">X Community</a>
+            </div>
+            <div class="top-link-item">
+                <span class="label">📊</span>
+                <a href="#" onclick="alert('Add your DexScreener link here!'); return false;">DexScreener</a>
+            </div>
+        </div>
+
+        <!-- Header -->
+        <div class="header">
+            <div class="logo-section">
+                <img src="WelcomeHome.jpg" alt="Welcome Home Pepe" class="pepe-image">
+                <h1 class="glow">🍟 WELCOME HOME 🍟</h1>
+                <p class="subtitle">The Wagecuck Pepe Returns</p>
+                <p class="tagline">"Would you like fries with that?"</p>
+            </div>
+        </div>
+
+        <!-- Ticker -->
+        <div class="ticker">
+            <div class="ticker-content">
+                <span>🍔 WE'RE MCLOVIN' IT 🍔</span>
+                <span>🍟 FROM DREAMS TO FRYER 🍟</span>
+                <span>💰 MAKING MINIMUM WAGE MAXIMUM GAINS 💰</span>
+                <span>🎓 COLLEGE DEGREE? NEVER HEARD OF HER 🎓</span>
+                <span>🍔 WE'RE MCLOVIN' IT 🍔</span>
+                <span>🍟 FROM DREAMS TO FRYER 🍟</span>
+                <span>💰 MAKING MINIMUM WAGE MAXIMUM GAINS 💰</span>
+                <span>🎓 COLLEGE DEGREE? NEVER HEARD OF HER 🎓</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- RED SECTION -->
+<div class="section-red">
+    <!-- Info Grid -->
+    <div class="info-grid">
+        <div class="info-box">
+            <h2>📖 The Story</h2>
+            <p>He thought he'd make it. He had dreams. But now? Now he's serving Big Macs to his former classmates. Welcome Home, Pepe. Welcome to the fryer. This is the memecoin for every anon who's been there. We're all gonna make it... eventually. 🍟</p>
+        </div>
+        <div class="info-box">
+            <h2>🎯 The Mission</h2>
+            <p>To unite all wagecucks, fry cooks, and minimum wage warriors under one banner: the golden arches. We're taking this coin to the moon while Pepe takes orders at the drive-thru. From McPoor to McMoon! 🚀</p>
+        </div>
+        <div class="info-box">
+            <h2>😂 The Meme</h2>
+            <p>It's not just a job, it's an adventure in disappointment. But at least we're all disappointed together. Join the crew and let's flip some burgers AND portfolios! May I take your order? Yes, I'll have one lambo please. 🏎️</p>
+        </div>
+    </div>
+</div>
+
+<!-- YELLOW SECTION -->
+<div class="section-yellow">
+    <!-- Roadmap -->
+    <div class="roadmap">
+        <h2>🗺️ ROADMAP (TO MINIMUM WAGE)</h2>
+        <div class="roadmap-item">
+            <h3>Phase 1: The Interview 🎤</h3>
+            <p>Launch token, get community onboard, create social media, start flipping memes instead of burgers</p>
+        </div>
+        <div class="roadmap-item">
+            <h3>Phase 2: First Day on the Job 🍔</h3>
+            <p>CoinGecko & CoinMarketCap listings, grow community to 1000+ holders, partner with other wagecuck tokens</p>
+        </div>
+        <div class="roadmap-item">
+            <h3>Phase 3: Employee of the Month 🏆</h3>
+            <p>CEX listings, major marketing push, influencer partnerships, McDonald's sponsorship (jk... unless? 👀)</p>
+        </div>
+        <div class="roadmap-item">
+            <h3>Phase 4: Buy the Franchise 🏢</h3>
+            <p>DAO governance, charity initiatives for actual food service workers, metaverse McDonald's, retire our parents</p>
+        </div>
+    </div>
+
+    <!-- CTA -->
+    <div class="cta-section">
+        <a href="#" class="cta-button" onclick="alert('CA: [INSERT YOUR CONTRACT ADDRESS HERE]'); return false;">
+            BUY NOW - YOUR SHIFT STARTS SOON
+        </a>
+        <p class="cta-text">
+            Available on Pump.fun / Raydium / Jupiter
+        </p>
+    </div>
+</div>
+
+<!-- BLACK SECTION -->
+<div class="section-black">
+    <!-- Memes Section -->
+    <div class="info-grid">
+        <div class="info-box">
+            <h2>💼 For The Culture</h2>
+            <p>"I have a bachelor's degree" 🤡<br>"That's great, here's your visor" 🧢<br><br>This token is for everyone who's ever been overqualified and underpaid. We're all in this together, anon.</p>
+        </div>
+        <div class="info-box">
+            <h2>🔥 Why Welcome Home?</h2>
+            <p>Because no matter how far you wander, how many moon missions you chase, McDonald's is always hiring. It's the safety net. The fallback. The ultimate "Welcome Home" 😭</p>
+        </div>
+        <div class="info-box">
+            <h2>⚠️ Disclaimer</h2>
+            <p>This is a memecoin. Not financial advice. Please don't quit your job at McDonald's to ape into this. Actually, maybe keep that job. For now. DYOR. WAGMI? 🤷</p>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        <h3 style="color: #FFC72C; margin-bottom: 20px;" class="glow">JOIN THE CREW</h3>
+        <div class="social-links">
+            <a href="#" onclick="alert('Add your Twitter link!'); return false;">🐦 Follow us on Twitter</a>
+        </div>
+        <p style="margin-top: 30px; opacity: 0.7;">
+            © 2025 Welcome Home Token. All rights reserved.<br>
+            No actual affiliation with McDonald's Corporation (but we wish we had that marketing budget)
+        </p>
+        <p style="margin-top: 20px; font-size: 2rem;">
+            🍔🍟🥤
+        </p>
+    </div>
+</div>
+
+<script>
+    // Duplicate ticker content for seamless loop
+    const ticker = document.querySelector('.ticker-content');
+    ticker.innerHTML += ticker.innerHTML;
+
+    // Parallax effect for McDonald's M and Fries
+    window.addEventListener('scroll', () => {
+        const scrolled = window.pageYOffset;
+
+        // M's parallax
+        const parallaxM = document.querySelectorAll('.mcdonalds-m');
+        parallaxM.forEach((element, index) => {
+            const speed = 0.3 + (index * 0.1);
+            const yPos = -(scrolled * speed);
+            element.style.transform = `translateY(${yPos}px) rotate(${element.classList.contains('m1') ? -15 : element.classList.contains('m2') ? 25 : -10}deg)`;
+        });
+
+        // Fries parallax - different speeds for variety
+        const parallaxFries = document.querySelectorAll('.fries');
+        parallaxFries.forEach((fry, index) => {
+            const speed = 0.15 + (index * 0.08);
+            const yPos = -(scrolled * speed);
+            const rotation = (scrolled * 0.05 * (index + 1)) % 360;
+            fry.style.transform = `translateY(${yPos}px) rotate(${rotation}deg)`;
+        });
+    });
+</script>
+</body>
+</html>
